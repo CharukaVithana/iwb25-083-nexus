@@ -1,0 +1,11 @@
+# Copy to Config.toml and set your local values
+# This file overrides configurable values in config.bal
+
+HTTP_PORT = 9091
+
+# Database settings
+USER = "root"
+PASSWORD = "<your-password>"
+HOST = "localhost"
+PORT = 3306
+DATABASE = "travel_helper"

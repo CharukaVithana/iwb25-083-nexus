@@ -1,0 +1,5 @@
+USER = "root"
+PASSWORD = "senum2001"
+HOST = "localhost"
+PORT = 3306
+DATABASE = "travel_helper"

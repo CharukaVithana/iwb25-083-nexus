@@ -1,0 +1,340 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Updated to Sri Lankan cultural color palette - Homepage Colors */
+  --color-primary: #307082; /* Teal - main brand color */
+  --color-primary-600: #6ca3a2; /* Sage green - lighter accent */
+  --color-primary-700: #12212e; /* Dark teal - darker variant */
+  --color-accent: #ea9940; /* Orange - call-to-action color */
+  --color-secondary: #6ca3a2; /* Sage green - secondary color */
+  --color-text: #12212e; /* Dark teal for text */
+  --color-bg: #ece7dc; /* Cream background */
+  --color-border: #6ca3a2; /* Sage green borders */
+  --color-neutral: #ece7dc; /* Cream neutral */
+
+  /* Set up font families */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+
+  /* Shadcn color mappings - Updated to use homepage palette */
+  --color-background: #ece7dc; /* Cream background */
+  --color-foreground: #12212e; /* Dark teal text */
+  --color-card: #ffffff; /* White cards */
+  --color-card-foreground: #12212e; /* Dark teal text on cards */
+  --color-popover: #ffffff; /* White popovers */
+  --color-popover-foreground: #12212e; /* Dark teal text */
+  --color-primary: #307082; /* Teal primary */
+  --color-primary-foreground: #ffffff; /* White text on primary */
+  --color-secondary: #6ca3a2; /* Sage green secondary */
+  --color-secondary-foreground: #ffffff; /* White text on secondary */
+  --color-muted: #f8f9fa; /* Light muted background */
+  --color-muted-foreground: #6c757d; /* Muted text */
+  --color-accent: #ea9940; /* Orange accent */
+  --color-accent-foreground: #ffffff; /* White text on accent */
+  --color-destructive: #dc3545; /* Red for destructive actions */
+  --color-destructive-foreground: #ffffff; /* White text on destructive */
+  --color-border: #dee2e6; /* Light border */
+  --color-input: #ffffff; /* White inputs */
+  --color-ring: #307082; /* Teal focus ring */
+  --color-chart-1: #307082; /* Teal for charts */
+  --color-chart-2: #6ca3a2; /* Sage green */
+  --color-chart-3: #ea9940; /* Orange */
+  --color-chart-4: #12212e; /* Dark teal */
+  --color-chart-5: #495057; /* Dark gray */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: #ffffff; /* White sidebar */
+  --color-sidebar-foreground: #12212e; /* Dark teal text */
+  --color-sidebar-primary: #307082; /* Teal primary */
+  --color-sidebar-primary-foreground: #ffffff; /* White text */
+  --color-sidebar-accent: #ece7dc; /* Cream accent */
+  --color-sidebar-accent-foreground: #12212e; /* Dark teal text */
+  --color-sidebar-border: #dee2e6; /* Light border */
+  --color-sidebar-ring: #307082; /* Teal ring */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Keyframe animations for the enhanced header */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 6rem;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chat popup animations */
+@keyframes chat-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes chat-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(10deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) rotate(-5deg);
+  }
+  70% {
+    transform: scale(0.98) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes message-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes typing-indicator {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-expand {
+  animation: expand 1s ease-out 0.3s both;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out 0.5s both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out 0.9s both;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.6s ease-out 0.7s both;
+}
+
+.animate-chat-slide-in {
+  animation: chat-slide-in 0.4s ease-out;
+}
+
+.animate-chat-bounce-in {
+  animation: chat-bounce-in 0.6s ease-out;
+}
+
+.animate-message-slide-in {
+  animation: message-slide-in 0.3s ease-out;
+}
+
+.animate-typing {
+  animation: typing-indicator 1.4s infinite;
+}
+
+/* Updated custom utility classes for Sri Lankan color theme */
+.text-primary {
+  color: #307082;
+}
+
+.bg-primary {
+  background-color: #307082;
+}
+
+.bg-primary-600 {
+  background-color: #6ca3a2;
+}
+
+.bg-primary-700 {
+  background-color: #12212e;
+}
+
+.text-accent {
+  color: #ea9940;
+}
+
+.bg-accent {
+  background-color: #ea9940;
+}
+
+.border-primary {
+  border-color: #307082;
+}
+
+/* Added new utility classes for the Sri Lankan palette */
+.text-secondary {
+  color: #6ca3a2;
+}
+
+.bg-secondary {
+  background-color: #6ca3a2;
+}
+
+.bg-cream {
+  background-color: #ece7dc;
+}
+
+.text-dark-teal {
+  color: #12212e;
+}
+
+.bg-dark-teal {
+  background-color: #12212e;
+}
+
+.border-secondary {
+  border-color: #6ca3a2;
+}
+
+.hover\:bg-primary-hover:hover {
+  background-color: #2a6370;
+}
+
+.hover\:bg-accent-hover:hover {
+  background-color: #d88a36;
+}
